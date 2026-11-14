@@ -1319,3 +1319,140 @@ a.project-link:hover .project-link__arrow {
   border-color: var(--accent-line);
 }
 
+/* ---------- Journey / timeline ---------- */
+
+.timeline {
+  --node-y: 2.25rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 10rem 3.5rem minmax(0, 1fr);
+}
+
+.timeline__marker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 1.6rem;
+  text-align: right;
+}
+
+.timeline__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.timeline__item--current .timeline__label {
+  color: var(--accent);
+}
+
+.timeline__period {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.timeline__rail {
+  position: relative;
+}
+
+/* ::before joins the node to the item above, ::after to the item below. */
+.timeline__rail::before,
+.timeline__rail::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: var(--border-strong);
+}
+
+.timeline__rail::before {
+  top: 0;
+  height: var(--node-y);
+}
+
+.timeline__rail::after {
+  top: var(--node-y);
+  bottom: 0;
+}
+
+.timeline__item:first-child .timeline__rail::before,
+.timeline__item:last-child .timeline__rail::after {
+  display: none;
+}
+
+.timeline__item--future .timeline__rail::before,
+.timeline__item--future .timeline__rail::after,
+.timeline__item--current:has(+ .timeline__item--future) .timeline__rail::after {
+  background: repeating-linear-gradient(to bottom, var(--border-strong) 0 4px, transparent 4px 9px);
+}
+
+.timeline__node {
+  position: absolute;
+  top: calc(var(--node-y) - 6px);
+  left: calc(50% - 6px);
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--text-muted);
+  border-radius: 50%;
+  background: var(--bg-secondary);
+}
+
+.timeline__item--current .timeline__node {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+
+.timeline__card {
+  margin-bottom: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  transition: border-color var(--dur) var(--ease-out);
+}
+
+.timeline__card:hover {
+  border-color: var(--border-strong);
+}
+
+.timeline__item:last-child .timeline__card {
+  margin-bottom: 0;
+}
+
+.timeline__item--future .timeline__card {
+  border-style: dashed;
+  background: transparent;
+}
+
+.timeline__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.timeline__org {
+  margin-top: 0.25rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.timeline__text {
+  max-width: 62ch;
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.timeline__points {
+  margin-top: 1.1rem;
+}
+

@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Journey from './components/Journey';
 import './App.css';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <About />
           <Skills />
           <Projects />
+          <Journey />
         </main>
       </MotionConfig>
     </LazyMotion>
