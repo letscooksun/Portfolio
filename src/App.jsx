@@ -5,6 +5,8 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Journey from './components/Journey';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 export default function App() {
@@ -21,7 +23,9 @@ export default function App() {
           <Skills />
           <Projects />
           <Journey />
+          <Contact />
         </main>
+        <Footer />
       </MotionConfig>
     </LazyMotion>
   );
