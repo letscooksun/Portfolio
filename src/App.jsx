@@ -1,6 +1,7 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import './App.css';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Navbar />
         <main id="main" tabIndex={-1}>
           <Hero />
+          <About />
         </main>
       </MotionConfig>
     </LazyMotion>
