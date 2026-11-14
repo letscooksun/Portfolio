@@ -1,4 +1,5 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
+import Navbar from './components/Navbar';
 import './App.css';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
         <a className="skip-link" href="#main">
           Skip to content
         </a>
+        <Navbar />
         <main id="main" tabIndex={-1}></main>
       </MotionConfig>
     </LazyMotion>
