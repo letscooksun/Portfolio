@@ -211,7 +211,7 @@ export const projects = [
     placeholder: 'portfolio',
     links: [
       { kind: 'github', label: 'Source code', href: null },
-      { kind: 'live', label: 'Live site', href: null },
+      { kind: 'live', label: 'Live site', href: 'https://portfolio-chi-gray-32.vercel.app/' },
     ],
   },
   {
